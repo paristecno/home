@@ -13,7 +13,7 @@ const Card = () => {
 		)}
 		{mostrarDetalle && !mostrarCheckout && (
 		  <button onClick={() => setmostrarCheckout(true)} className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">
-			Detail
+			Detalle
 		  </button>
 		)}
 		{mostrarCheckout && (
