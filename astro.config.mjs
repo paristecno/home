@@ -1,4 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  // otras configuraciones de Astro
+  outDir: 'dist', // Este es el directorio de salida por defecto
+});
