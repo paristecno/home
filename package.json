@@ -1,5 +1,6 @@
 {
   "name": "home",
+  "homepage": "http://paristecno.github.io/home",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,14 +11,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.3.4",
-    "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.8.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "astro": "^4.8.6"
   }
 }

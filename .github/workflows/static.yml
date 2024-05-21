@@ -1,26 +1,31 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Aquí puedes cambiar a la rama que deseas que desencadene el despliegue
+      - master  # Asegúrate de que esto coincide con tu rama principal
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
         run: npm install
 
       - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          publish_dir: ./dist  # Ruta donde se encuentra la carpeta de distribución después de la construcción
+          publish_dir: ./dist  # Asegúrate de que esto coincide con el directorio de salida de tu build
