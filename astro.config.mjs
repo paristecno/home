@@ -4,10 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  // Añade la base URL de tu proyecto
-  base: '/home', // Reemplaza 'home' con el nombre de tu repositorio
-
-  // Otras configuraciones de Astro
+  base: '/home', // Reemplaza 'home' con el nombre de tu repositorio si es diferente
   outDir: 'dist', // Este es el directorio de salida por defecto
   integrations: [react(), tailwind()]
 });
