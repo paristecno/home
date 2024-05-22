@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import Landing from './Home/Landing/Landing';
 
 const Card = () => {
 	const [mostrarDetalle, setmostrarDetalle] = useState(false);
 	const [mostrarCheckout, setmostrarCheckout] = useState(false);
   
 	return (
-	  <div className="flex justify-center items-center h-screen">
+	  <div >
 		{!mostrarDetalle && !mostrarCheckout && (
-		  <button onClick={() => setmostrarDetalle(true)} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
-			Landing
-		  </button>
+			<Landing mostrarDetalle={mostrarDetalle} setmostrarDetalle={setmostrarDetalle}/>
+		//   <button onClick={() => setmostrarDetalle(true)} className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">
+		// 	Landing
+		//   </button>
 		)}
 		{mostrarDetalle && !mostrarCheckout && (
 		  <button onClick={() => setmostrarCheckout(true)} className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">
