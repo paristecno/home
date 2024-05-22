@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Landing =  ({ mostrarDetalle, setmostrarDetalle }) => {
+const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
   const products = [
     {
       id: 1,
@@ -271,7 +271,7 @@ const Landing =  ({ mostrarDetalle, setmostrarDetalle }) => {
             </div>
           </div>
           <button
-          onClick={() => setmostrarDetalle(true)}
+          onClick={() => onDetalleClick(product)}
           className="w-full text-center flex items-center text-white mt-2 justify-center gap-1 rounded border border-slate-300 bg-green-500 px-4 py-2 font-semibold hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 focus-visible:ring-offset-2 active:opacity-100"
 >
   VER MÁS
@@ -324,6 +324,7 @@ const Landing =  ({ mostrarDetalle, setmostrarDetalle }) => {
                 </div>
               </div>
               <button
+               onClick={() => onDetalleClick(product)}
   className="w-full text-center flex items-center text-white mt-2 justify-center gap-1 rounded border border-slate-300 bg-green-500 px-4 py-2 font-semibold hover:opacity-90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-300 focus-visible:ring-offset-2 active:opacity-100"
 >
   VER MÁS
