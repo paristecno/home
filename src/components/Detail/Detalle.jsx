@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Checkout from '../Checkout/Checkout';
 import Nav from '../Home/NavBar/Nav';
 
@@ -11,9 +11,12 @@ const Detalle = ({ price, name, image }) => {
   };
 
   // <button className='bg-red-500 rounded-md text-4xl p-4 text-white' onClick={mostrarCheckoutHandler}>Mostrar Checkout</button>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); // Este efecto se ejecuta solo una vez al montar el componente
 
   return (
-    <div>
+    <div className="mx-auto max-w-screen-xl border">
       {/* Renderiza el contenido solo si mostrarCheckout es false */}
       {!mostrarCheckout && (
         <div>
@@ -138,7 +141,7 @@ const Detalle = ({ price, name, image }) => {
         <h2 className="hidden md:flex mt-8 text-3xl text-gray-900">${price}</h2>
         <div className='md:hidden'>
         <h2 className="md:hidden  text-3xl mt-[-22px] text-gray-900">${price.toLocaleString('es-AR')}</h2>
-        <p className='text-lg text-green-700'>Hasta 6 cuotas sin interés de ${Math.round(price / 6).toLocaleString("es-AR")}</p>
+        <p className='text-lg text-green-700'>Hasta 12 cuotas sin interés de ${Math.round(price / 12).toLocaleString("es-AR")}</p>
         </div>
         <div className="flex mt-3 md:hidden select-none flex-wrap items-center gap-1">
    <p className='text-lg'><span className='text-green-700 font-semibold'>
