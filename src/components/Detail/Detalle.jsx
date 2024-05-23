@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Checkout from '../Checkout/Checkout';
+import Nav from '../Home/NavBar/Nav';
 
 const Detalle = ({ price, name, image }) => {
   const [mostrarCheckout, setMostrarCheckout] = useState(false); // Estado para controlar la visibilidad del Checkout
@@ -16,7 +17,8 @@ const Detalle = ({ price, name, image }) => {
       {/* Renderiza el contenido solo si mostrarCheckout es false */}
       {!mostrarCheckout && (
         <div>
-         <section className="py-12 sm:py-16"> 
+         <Nav/>
+         <section className="py-12 sm:py-16 mt-[-20px]"> 
   <div className="container mx-auto px-4">
   <nav className="flex">
       <ol className="flex items-center">
@@ -83,23 +85,23 @@ const Detalle = ({ price, name, image }) => {
           <p className="ml-2 text-sm font-medium text-gray-500">{"(513)"}</p>
         </div>
 
-        <div className="mt-2 ml-[-5px] flex items-center md:hidden">
+        {/* <div className="mt-2 ml-[-5px] flex items-center md:hidden">
                   <p className="rounded-full bg-sky-500 p-1 text-[10px] font-bold uppercase tracking-wide text-white sm:py-1 sm:px-3">30% de descuento</p>
-        </div>
+        </div> */}
 
     <div className="lg:col-gap-12	 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
       <div className="lg:col-span-3 lg:row-end-1">
         <div className="lg:flex lg:items-start">
           <div className="lg:order-2 lg:ml-5">
             <div className="max-w-xl overflow-hidden rounded-lg">
-              <img className="h-full w-full max-w-full object-cover" src="https://kanji.com.ar/wp-content/uploads/2024/02/Smart-TV-65-01.jpg" alt="hola" />
+              <img className="h-full w-full max-w-full object-cover" src="https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg" alt="hola" />
             </div>
           </div>
 
           <div className="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
             <div className="flex flex-row items-start lg:flex-col">
               <button type="button" className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                <img className="h-full w-full object-cover" src="https://kanji.com.ar/wp-content/uploads/2024/02/Smart-TV-65-01.jpg" alt="" />
+                <img className="h-full w-full object-cover" src="https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg" alt="" />
               </button>
              
           
@@ -135,7 +137,7 @@ const Detalle = ({ price, name, image }) => {
 
         <h2 className="hidden md:flex mt-8 text-3xl text-gray-900">${price}</h2>
         <div className='md:hidden'>
-        <h2 className="md:hidden  text-3xl  text-gray-900">${price.toLocaleString('es-AR')}</h2>
+        <h2 className="md:hidden  text-3xl mt-[-22px] text-gray-900">${price.toLocaleString('es-AR')}</h2>
         <p className='text-lg text-green-700'>Hasta 6 cuotas sin interés de ${Math.round(price / 6).toLocaleString("es-AR")}</p>
         </div>
         <div className="flex mt-3 md:hidden select-none flex-wrap items-center gap-1">
@@ -239,11 +241,6 @@ const Detalle = ({ price, name, image }) => {
         <div className="border-b border-gray-300">
           <nav className="flex gap-4">
             <a href="#" title="" className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
-
-            <a href="#" title="" className="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
-              Reviews
-              <span className="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
-            </a>
           </nav>
         </div>
 

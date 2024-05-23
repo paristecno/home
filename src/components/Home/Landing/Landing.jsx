@@ -142,8 +142,8 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
 
   return (
     <div className='mt-[-8px]'>
-      <Nav/>
       <div className="mx-auto max-w-screen-xl border">
+      <Nav/>
       <div className="relative">
   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"></div>
   <div className="relative h-72 rounded-b-lg bg-cover bg-center bg-no-repeat shadow-lg">
