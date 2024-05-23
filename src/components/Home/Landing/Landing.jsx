@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from '../NavBar/Nav';
 
 
 const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
@@ -6,11 +7,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     {
       id: 1,
       discount: 50,
-
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -21,7 +21,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -32,7 +32,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -43,7 +43,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -54,7 +54,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -65,7 +65,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -76,7 +76,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabiana Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -87,7 +87,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -100,7 +100,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -111,7 +111,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -122,7 +122,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -133,7 +133,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       name: 'Arabian Musk',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
       sale: true,
-      originalPrice: 79.00,
+      price: 1500.00,
       discountedPrice: 99.00,
       ratings: 4
     }
@@ -142,7 +142,8 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
 
   return (
     <div className='mt-[-8px]'>
-      <div className="mx-auto max-w-screen-xl">
+      <Nav/>
+      <div className="mx-auto max-w-screen-xl border">
       <div className="relative">
   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500"></div>
   <div className="relative h-72 rounded-b-lg bg-cover bg-center bg-no-repeat shadow-lg">
@@ -213,7 +214,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
 
       <div className='items-center bg-slate-200  justify-center flex flex-col h-full'>
   <h1 className='text-3xl mt-5 font-bold text-red-500 text-center'>{"¡OFERTAS HOT SALE!"}</h1>
-  <p className='text-xl text-lg text-gray-800 text-center'>{"¡Disfruta de toda la copa américa! Llevate tu SMART TV FULL HD 32\" en 3, 6, 12, 18 o 24 cuotas sin interés. 🎉⚽"}</p>
+  <p className='text-xl text-gray-800 text-center'>{"¡Disfruta de toda la copa américa! Llevate tu SMART TV FULL HD 32\" en 3, 6, 12, 18 o 24 cuotas sin interés. 🎉⚽"}</p>
   <p className='text-lg text-gray-500 mb-5 text-center'>{"(Oferta válida hasta agotar stock 26/05/2024)"}</p>
 </div>
 
@@ -262,11 +263,11 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
             <div className="text-right">
               {product.sale && (
                 <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">
-                  ${product.originalPrice.toFixed(2)}
+                  ${Math.round(product.price * 100 / product.discount).toLocaleString("es-AR")}
                 </del>
               )}
-              <p className="text-xs font-normal sm:text-sm md:text-base">
-                ${product.discountedPrice.toFixed(2)}
+              <p className="text-lg font-normal sm:text-sm md:text-lg">
+                ${product.price.toLocaleString("es-AR")}
               </p>
             </div>
           </div>
@@ -284,7 +285,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
 
 <div className='items-center bg-slate-200  justify-center flex flex-col h-full'>
   <h1 className='text-3xl mt-5 font-bold text-red-500 text-center'>{"↓ Más productos ↓"}</h1>
-  <p className='text-xl mb-5 text-lg text-gray-800 text-center'>{"¡Explora lo último en tecnología! 🔍 Con Mercado Pago compra seguro, envío gratis a toda la Argentina. ✨🚚"}</p>
+  <p className='text-xl mb-5 text-gray-800 text-center'>{"¡Explora lo último en tecnología! 🔍 Con Mercado Pago compra seguro, envío gratis a toda la Argentina. ✨🚚"}</p>
 </div>
 
 
