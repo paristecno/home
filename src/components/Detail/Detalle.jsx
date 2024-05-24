@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Checkout from '../Checkout/Checkout';
 import Nav from '../Home/NavBar/Nav';
+import Cargaso from './Cargaso';
 
-const Detalle = ({ price, name, image }) => {
+const Detalle = ({ price, name, image, discount }) => {
+  const [carga, setCarga] = useState('')
   const [mostrarCheckout, setMostrarCheckout] = useState(false); // Estado para controlar la visibilidad del Checkout
 
   // Función para mostrar el Checkout al hacer clic en el botón
   const mostrarCheckoutHandler = () => {
-    setMostrarCheckout(true);
+    setCarga(true)
+    setTimeout(() => {
+      setCarga(false)
+      setMostrarCheckout(true);
+    }, 3000);
   };
 
   // <button className='bg-red-500 rounded-md text-4xl p-4 text-white' onClick={mostrarCheckoutHandler}>Mostrar Checkout</button>
@@ -18,7 +24,7 @@ const Detalle = ({ price, name, image }) => {
   return (
     <div className="mx-auto max-w-screen-xl border">
       {/* Renderiza el contenido solo si mostrarCheckout es false */}
-      {!mostrarCheckout && (
+      {!mostrarCheckout && !carga && (
         <div>
          <Nav/>
          <section className="py-12 sm:py-16 mt-[-20px]"> 
@@ -138,9 +144,9 @@ const Detalle = ({ price, name, image }) => {
           <p className="ml-2 text-sm font-medium text-gray-500">{"(513)"}</p>
         </div>
 
-        <h2 className="hidden md:flex mt-8 text-3xl text-gray-900">${price}</h2>
+        <h2 className="hidden md:flex mt-8 text-3xl text-gray-900">${price.toLocaleString("es-AR")} <span className='text-sm ml-2'>$<del>{Math.round(price*2).toLocaleString("es-AR")}</del></span></h2>
         <div className='md:hidden'>
-        <h2 className="md:hidden  text-3xl mt-[-22px] text-gray-900">${price.toLocaleString('es-AR')}</h2>
+        <h2 className="md:hidden  text-3xl mt-[-22px] text-gray-900">${price.toLocaleString('es-AR')} <span className='text-sm'>$<del>{Math.round(price*100 / discount).toLocaleString("es-AR")}</del></span></h2>
         <p className='text-lg text-green-700'>Hasta 12 cuotas sin interés de ${Math.round(price / 12).toLocaleString("es-AR")}</p>
         </div>
         <div className="flex mt-3 md:hidden select-none flex-wrap items-center gap-1">
@@ -260,7 +266,7 @@ const Detalle = ({ price, name, image }) => {
 </section>
         </div>
       )}
-      {/* Mostrar el Checkout si mostrarCheckout es true */}
+      {carga && <Cargaso/>}
       {mostrarCheckout && <Checkout price={price} name={name} image={image}/>}
     </div>
   );
