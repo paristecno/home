@@ -6,22 +6,22 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
   const products = [
     {
       id: 1,
-      discount: 50,
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      discount: 30,
+      name: 'Heladera con freezer Gafa HGF388AFP',
+      image: 'https://electroluxar.vtexassets.com/arquivos/ids/162265-1200-1200?v=637950624089400000&width=1200&height=1200&aspect=true',
       sale: true,
-      price: 1500.00,
+      price: 690000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
     {
       id: 2,
-      discount: 50,
+      discount: 30,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'USMAN COCINA IRINA ACERO 550 Horno',
+      image: 'https://76338a6a.flyingcdn.com/15851-thickbox_default/usman-cocina-irina-acero-550-rf-horno-visor-cod2220.jpg',
       sale: true,
-      price: 1500.00,
+      price: 330000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -29,10 +29,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 3,
       discount: 50,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'WHIRLPOOL LAVARROPAS WNQ-80AB FRONTAL 8KG',
+      image: 'https://76338a6a.flyingcdn.com/47151-thickbox_default/whirlpool-lavarropas-wnq-80ab-frontal-8kg-blanco.jpg',
       sale: true,
-      price: 1500.00,
+      price: 490000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -40,10 +40,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 4,
       discount: 50,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'PHILCO MICROONDAS MPG8428N 28LTS. DIGITAL C/GRILL',
+      image: 'https://76338a6a.flyingcdn.com/38688-thickbox_default/philco-microondas-mpg8428n-28lts-digital-cgrill.jpg',
       sale: true,
-      price: 1500.00,
+      price: 210000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -51,10 +51,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 5,
       discount: 50,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'DAEWOO ESTUFA GARRAFERA DANY-113 INFRARROJA',
+      image: 'https://76338a6a.flyingcdn.com/31489-thickbox_default/daewoo-estufa-garrafera-dany-113-infrarroja.jpg',
       sale: true,
-      price: 1500.00,
+      price: 140000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -62,10 +62,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 6,
       discount: 50,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'ESKABE CALEFACTOR 3000 KCAL M3 TB3 P GRIS GN',
+      image: 'https://76338a6a.flyingcdn.com/46827-thickbox_default/eskabe-calefactor-3000-kcal-m3-tb3-p-gris-gn.jpg',
       sale: true,
-      price: 1500.00,
+      price: 180000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -73,10 +73,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 7,
       discount: 50,
 
-      name: 'Arabiana Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'CHROMECAST 4 GOOGLE HD GENERACION',
+      image: 'https://76338a6a.flyingcdn.com/46229-thickbox_default/chromecast-4-google-hd-generacion.jpg',
       sale: true,
-      price: 1500.00,
+      price: 72000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -84,10 +84,10 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       id: 8,
       discount: 50,
 
-      name: 'Arabian Musk',
-      image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
+      name: 'ROKU EXPRESS TRANSMISOR SMART 3930MX',
+      image: 'https://76338a6a.flyingcdn.com/23003-thickbox_default/roku-express-transmisor-smart-3930mx-499025399.jpg',
       sale: true,
-      price: 1500.00,
+      price: 93000.00,
       discountedPrice: 99.00,
       ratings: 4
     },
@@ -303,7 +303,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
                 </div>
                 <div className="text-right">
                   <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">$ {Math.round(product.price * 100 / product.discount).toLocaleString("es-AR")} </del>
-                  <p className="text-lg font-medium  ">$ {product.price.toLocaleString("es-AR")} </p>
+                  <p className="text-lg font-medium  ">${product.price.toLocaleString("es-AR")} </p>
                 </div>
               </div>
               <button
