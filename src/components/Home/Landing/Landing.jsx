@@ -153,7 +153,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
         <img className="h-full w-full object-cover hidden sm:block" src="https://www.paris.cl/on/demandware.static/-/Sites/es_CL/dw7980b95a/marketing/home/home_pariscl/banner_recibehoy_18ene22.jpg" alt="Banner" />
     <div className="px-4 pt-8 pb-10">
       <div className="absolute inset-x-0 -bottom-10 mx-auto w-36 rounded-full border-8 border-white shadow-lg">
-        <img className="mx-auto h-auto w-full rounded-full" src="https://seeklogo.com/images/P/paris-cl-logo-D2E2E84D3D-seeklogo.com.png" alt="" />
+        <img className="mx-auto h-auto w-full rounded-full" src="https://i.ibb.co/C9YGs9p/Dise-o-sin-t-tulo-3.png" alt="" />
       </div>
     </div> 
   </div>
@@ -204,12 +204,12 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
         </div>
 {/* Banner solo para dispositivos móviles */}
 <div className="block sm:hidden">
-        <img src="./src/components/Home/Landing/banerCelu.png" className="w-full mb-10" alt="Banner móvil" />
+        <img src="https://i.postimg.cc/Mpf6BPJL/baner-Celu.png" className="w-full mb-10" alt="Banner móvil" />
       </div>
 
       {/* Banner solo para dispositivos de PC */}
       <div className="hidden sm:block">
-        <img src="./src/components/Home/Landing/bannerPC.png" className='mb-10' alt="Banner PC" />
+        <img src="https://i.postimg.cc/zvyMQQ7Z/bannerPC.png" className='mb-10' alt="Banner PC" />
       </div>
 
       <div className='items-center bg-slate-200  justify-center flex flex-col h-full'>
