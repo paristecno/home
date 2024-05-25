@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Navas from './Navas';
 import Carga from './Carga';
+import Erro from './Erro';
 
 const Mp = ({ formData }) => {
     const estilo = {
@@ -163,7 +164,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
     </div>
 )}
 {loading && <Carga/>}
-{mostarError && <div>hola</div>}
+{mostarError && <Erro/>}
     </div>
   );
 };
