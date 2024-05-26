@@ -46,7 +46,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     },
     {
       id: 3,
-      discount: 50,
+      discount: 60,
 
       name: 'WHIRLPOOL LAVARROPAS WNQ-80AB FRONTAL 8KG',
       image: 'https://76338a6a.flyingcdn.com/47151-thickbox_default/whirlpool-lavarropas-wnq-80ab-frontal-8kg-blanco.jpg',
@@ -107,7 +107,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     },
     {
       id: 6,
-      discount: 50,
+      discount: 20,
 
       name: 'ESKABE CALEFACTOR 3000 KCAL M3 TB3 P GRIS GN',
       image: 'https://76338a6a.flyingcdn.com/46827-thickbox_default/eskabe-calefactor-3000-kcal-m3-tb3-p-gris-gn.jpg',
@@ -127,7 +127,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     },
     {
       id: 7,
-      discount: 50,
+      discount: 9,
 
       name: 'CHROMECAST 4 GOOGLE HD GENERACION',
       image: 'https://76338a6a.flyingcdn.com/46229-thickbox_default/chromecast-4-google-hd-generacion.jpg',
@@ -147,12 +147,12 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     },
     {
       id: 8,
-      discount: 50,
+      discount: 30,
 
       name: 'ROKU EXPRESS TRANSMISOR SMART 3930MX',
       image: 'https://76338a6a.flyingcdn.com/23003-thickbox_default/roku-express-transmisor-smart-3930mx-499025399.jpg',
       sale: true,
-      price: 93000.00,
+      price: 86000.00,
       discountedPrice: 99.00,
       ratings: 4,
       description: {
