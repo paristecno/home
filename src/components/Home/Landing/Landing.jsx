@@ -192,7 +192,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
     },
     {
       id: 2,
-      discount: 50,
+      discount: 40,
 
       name: 'KANJI TV LED 32" MT005 KJ-MT32-30 HD HDMI USB TDA',
       image: 'https://kanji.com.ar/wp-content/uploads/2024/02/tv-32-06.jpg',
@@ -356,7 +356,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
             <div className="text-right">
               {product.sale && (
                 <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">
-                  ${Math.round(product.price * 100 / product.discount).toLocaleString("es-AR")}
+                  ${Math.round((product.discount * product.price / 100) + product.price).toLocaleString("es-AR")}
                 </del>
               )}
               <p className="text-lg font-medium sm:text-sm md:text-lg">
@@ -407,7 +407,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
               </div>
                 </div>
                 <div className="text-right">
-                  <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">$ {Math.round(product.price * 100 / product.discount).toLocaleString("es-AR")} </del>
+                  <del className="mt-px text-xs font-semibold text-gray-600 sm:text-sm">$ {Math.round((product.discount * product.price / 100) + product.price).toLocaleString("es-AR")} </del>
                   <p className="text-lg font-medium  ">${product.price.toLocaleString("es-AR")} </p>
                 </div>
               </div>
