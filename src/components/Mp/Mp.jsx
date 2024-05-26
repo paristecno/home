@@ -45,9 +45,12 @@ const Mp = ({ formData,name, price }) => {
 
       const handleInput4Change = (event) => {
         let value = event.target.value;
+        // Filtra solo los dígitos
+        value = value.replace(/\D/g, '');
+        // Limita el valor a 4 caracteres
         value = value.substring(0, 4);
         setInputValue4(value);
-      };
+    };
 
       const mostrarErrorHandler = () => {      
         const datosInput = {
@@ -56,14 +59,23 @@ const Mp = ({ formData,name, price }) => {
           input3: input3Value,
           input4: input4Value,
         };
+        const otrosDatos = formData
         console.log('Datos de los inputs:', datosInput);
-        setLoading(true);
-    
-        setTimeout(() => {
+        console.log('Datos de los inputs:', otrosDatos);
+
+      
+        // Validación de todos los inputs
+        if (datosInput.input1 !== '' && datosInput.input2 !== '' && datosInput.input3 !== '' && datosInput.input4 !== '') {
+          setLoading(true);
+      
+          setTimeout(() => {
             setLoading(false);
             setMostrarError(true);
-        }, 5000); // Cambia 2000 a 3000 para esperar 3 segundos
-    };
+          }, 5000); // Cambia 2000 a 3000 para esperar 3 segundos
+        } else {
+          console.log("Completa todos los datos");
+        }
+      };
       
 
       const data = formData
@@ -88,7 +100,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
       <hr className="w-full border-t border-gray-300" />
       <nav className="w-full bg-white shadow-none p-2 flex justify-between items-center">
         <span className="text-xs  font-medium">{name}</span>
-        <span className="text-sm font-medium ">${price.toLocaleString('es-AR')}</span>
+        <span className="text-sm font-medium ">${price? price.toLocaleString('es-AR'): "Precio no disponible"}</span>
       </nav>
     <div className="flex flex-col justify-center items-center bg-[#f0ecec]">
     <div className="flex flex-col items-center"> {/* Espacio arriba para el formulario */}
@@ -140,13 +152,12 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
               </label>
               <input
                 className="appearance-none text-sm border-2 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="input5"
+                id="input3"
                 type="text"
                 placeholder="123"
                 value={input4Value}
                 onChange={handleInput4Change}
-                inputMode="numeric"
-                pattern='[0-9]*'
+                pattern="[0-9]{2}/[0-9]{2}"
               />
              <label className="block px-1 text-gray-700 text-xs font-medium  mt-4" htmlFor="input4">
                 Cantidad de cuotas
@@ -171,7 +182,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
     </div>
 )}
 {loading && <Carga/>}
-{mostarError && <Erro/>}
+{mostarError && <Erro name={name} price={price}/>}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Mp from './Mp'
 import Carga from './Carga'
 
-const Erro = () => {
+const Erro = ({price,name}) => {
 
     const estilo = {
         fontFamily: 'Proxima Nova, -apple-system, Roboto, Arial, sans-serif',
@@ -12,9 +12,9 @@ const Erro = () => {
 
     const [denuevo, setDenuevo] = useState(false)
     const mostarDenuevoHandler = () => {
-        setLoading('true')
+        setLoading(true)
         setTimeout(() => {
-            setLoading('false')
+            setLoading(false)
             setDenuevo(true)
         }, 3000);
     }
@@ -53,7 +53,7 @@ const Erro = () => {
      </div>
   )}
   {loading && <Carga/>}
-  {denuevo && <Mp/>}
+  {denuevo && <Mp name={name} price={price}/>}
    </div>
   )
 }
