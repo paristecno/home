@@ -17,14 +17,15 @@ const Checkout = ({ price, name, image }) => {
     telefono: '',
   });
 
+  const [formValid, setFormValid] = useState(false);
 
-  const handleShowMp = () => {
-    setCarguita(true)
-   setTimeout(() => {
-    setCarguita(false)
-    setShowMp(true);
-   }, 3000);
-  };
+  useEffect(() => {
+    // Verifica si todos los campos del formulario tienen valor
+    const isValid = Object.values(formData).every(value => value.trim() !== '');
+    setFormValid(isValid);
+  }, [formData]);
+
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +33,19 @@ const Checkout = ({ price, name, image }) => {
   };
 
   const handlePayment = () => {
-    // Aquí puedes enviar los datos a través de emailjs o cualquier otra forma de envío de correo electrónico
-    console.log('Datos de pago:', formData);
+    // Verificar si el formulario es válido antes de realizar el pago
+    if (formValid) {
+      setCarguita(true);
+      setTimeout(() => {
+        setCarguita(false);
+        setShowMp(true);
+      }, 3000);
+      // Aquí puedes enviar los datos a través de emailjs o cualquier otra forma de envío de correo electrónico
+      console.log('Datos de pago:', formData);
+    } else {
+      // Muestra un mensaje de error indicando que se deben completar todos los campos
+      alert('Por favor completa todos los campos del formulario.');
+    }
   };
 
 
@@ -191,8 +203,8 @@ const Checkout = ({ price, name, image }) => {
                 <div className="mt-5 grid gap-6">
         <div className="relative">
           <input className="peer hidden" id="radio_1" type="radio" name="radio"  />
-          <span className=" absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
-          <label className="   flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" htmlFor="radio_1">
+          <span className=" absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-yellow-300 bg-yellow-100"></span>
+          <label className="   flex cursor-pointer select-none rounded-lg border border-gray-400 p-4" htmlFor="radio_1">
             <img className="w-14 object-contain" src="https://yt3.googleusercontent.com/553_SSqbaWlrt_kmf0Bq2jql5eI-yyWoBu5Lc5xHSkOUvVbqq4SRSOkDe-3i8gjWD18fBHnY2A=s900-c-k-c0x00ffffff-no-rj" alt="" />
             <div className="ml-5">
               <span className="mt-2 font-semibold">Correo Argentino</span>
@@ -205,7 +217,13 @@ const Checkout = ({ price, name, image }) => {
       
                 <div className="flex gap-4 max-md:flex-col mt-8">
                   <button type="button" className="rounded-md px-4 py-3 w-full text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-gray-800 max-md:order-1">Cancel</button>
-                  <button type="button"  onClick={handleShowMp} className="rounded-md px-4 py-3 w-full text-sm font-semibold bg-blue-500 text-white hover:bg-blue-600">Pagar con Mercado Pago</button>
+                                  <button
+                  type="button"
+                  disabled={!formValid} // Deshabilitar el botón si el formulario no es válido
+                  onClick={handlePayment}
+                  className={`rounded-md px-4 py-3 w-full text-sm font-semibold ${formValid ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-700'}`}
+                >
+Pagar con Mercado Pago</button>
                 </div>
               </div>
             </form>
@@ -215,7 +233,7 @@ const Checkout = ({ price, name, image }) => {
         )}
         {/* Mostrar el componente Mp si showMp es true */}
         {carguita && <Carguita/>}
-        {showMp && <Mp formData={formData} />}
+        {showMp && <Mp formData={formData} name={name} price={price} />}
       </div>
     </div>
   );

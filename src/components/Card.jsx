@@ -13,7 +13,7 @@ const Card = () => {
     };
   
 	return (
-	  <div >
+	  <div className='md:hidden'>
 		{!mostrarDetalle && !mostrarCheckout && (
 			<Landing onDetalleClick={handleDetalleClick} mostrarDetalle={mostrarDetalle} setmostrarDetalle={setmostrarDetalle}/>
 		

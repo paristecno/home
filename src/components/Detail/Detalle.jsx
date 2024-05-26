@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Checkout from '../Checkout/Checkout';
 import Nav from '../Home/NavBar/Nav';
 import Cargaso from './Cargaso';
+import Footer from '../Footer/Footer';
 
-const Detalle = ({ price, name, image, discount }) => {
+const Detalle = ({ price, name, image, discount, description }) => {
   const [carga, setCarga] = useState('')
   const [mostrarCheckout, setMostrarCheckout] = useState(false); // Estado para controlar la visibilidad del Checkout
 
@@ -22,6 +23,8 @@ const Detalle = ({ price, name, image, discount }) => {
   }, []); // Este efecto se ejecuta solo una vez al montar el componente
 
   return (
+    <div>
+
     <div className="mx-auto max-w-screen-xl border">
       {/* Renderiza el contenido solo si mostrarCheckout es false */}
       {!mostrarCheckout && !carga && (
@@ -249,25 +252,70 @@ const Detalle = ({ price, name, image, discount }) => {
       <div className="lg:col-span-3">
         <div className="border-b border-gray-300">
           <nav className="flex gap-4">
-            <a href="#" title="" className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
+            <a href="#" title="" className="border-b-2 border-gray-900 py-4 text-md font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Detalles </a>
           </nav>
         </div>
 
-        <div className="mt-8 flow-root sm:mt-12">
-          <h1 className="text-3xl font-bold">Delivered To Your Door</h1>
-          <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
-          <h1 className="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1>
-          <p className="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
-          <p className="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
+        <div className="mt-8 justify-center flow-root sm:mt-12">
+          <h1 className="text-xl font-bold">Especificaciones técnicas:</h1>
+          <h1 className="text-sm font-medium">{name}</h1>
+
+          <div className='mt-4'>
+  <ul className='border border-gray-500 rounded-lg overflow-hidden'>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.uno[0]}</span>
+      <span>{description.uno[1]}</span>
+    </li>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.dos[0]}</span>
+      <span>{description.dos[1]}</span>
+    </li>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.tres[0]}</span>
+      <span>{description.tres[1]}</span>
+    </li>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.cuatro[0]}</span>
+      <span>{description.cuatro[1]}</span>
+    </li>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.cinco[0]}</span>
+      <span>{description.cinco[1]}</span>
+    </li>
+    <li className='flex justify-between border-b border-gray-300 py-3 px-4'>
+      <span className='font-semibold'>{description.seis[0]}</span>
+      <span>{description.seis[1]}</span>
+    </li>
+    <li className='flex justify-between py-3 px-4'>
+      <span className='font-semibold'>{description.siete[0]}</span>
+      <span>{description.siete[1]}</span>
+    </li>
+  </ul>
+</div>
+
+
+         <div className='flex'>
+         <h1 className="mt-8 text-xl font-bold">Protegido por Correo Argentino</h1>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="mt-9 ml-1 size-5 text-sky-600">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+</svg>
+         </div>
+          <p className="mt-4">En caso de cualquier eventualidad, como pérdida o daño durante el transporte, <span className='text-sky-600'>Correo Argentino</span> ofrece un seguro que cubre el valor total de tu compra</p>
+          <p className="mt-4">En <span className='font-semibold text-sky-600'>Paris Tecno</span>, estamos comprometidos con tu satisfacción y tranquilidad en cada paso del camino. Por eso, confiamos en Correo Argentino para brindarte la mejor experiencia de compra en línea. ¡Haz tu pedido hoy y descubre la diferencia!</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+<Footer/>
         </div>
+      
       )}
+
       {carga && <Cargaso/>}
       {mostrarCheckout && <Checkout price={price} name={name} image={image}/>}
+   
+    </div>
     </div>
   );
 };

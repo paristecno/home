@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../NavBar/Nav';
+import Footer from '../../Footer/Footer';
 
 
 const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
@@ -12,7 +13,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 690000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        uno: ["Refrigerador (litros) - Capacidad Bruta/Neta", 254],
+        dos: ["Congelador (litros) - Capacidad bruta/neta", 120],
+        tres: ["Total (litros) - Capacidad Bruta/Neta", 374],
+        cuatro: ["Ancho (desempaquetado)","61,4 cm"],
+        cinco: ["Altura (sin embalaje)", "180,0 cm"],
+        seis: ["Profundidad (sin empaquetar)","62,1 cm"],
+        siete: ["Peso (sin embalaje)", "53 kg"]
+      } 
     },
     {
       id: 2,
@@ -23,7 +33,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 330000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        uno: ["Cantidad de hornallas", 4],
+        dos: ["COCINA USMAN ® MODELO", "IRINA CLASSIC550"],
+        tres: ["Puerta de horno visor con vidrio templado", "Si"],
+        cuatro: ["Alto rendimiento para amantes de la cocina y espacios reducidos", "Si"],
+        cinco: ["Estructura elegante y funcional", "Si"],
+        seis: ["Perillas metálicas", "Si"],
+        siete: ["Piel de acero inoxidable", "Si"]
+      }
     },
     {
       id: 3,
@@ -34,7 +53,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 490000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Carga", "Frontal"],
+        "dos": ["Inverter", "Si"],
+        "tres": ["Marca", "Whirlpool"],
+        "cuatro": ["Origen", "Industria Argentina"],
+        "cinco": ["Eficiencia Energética", "A++"],
+        "seis": ["Color", "Blanco"],
+        "siete": ["Capacidad", "8 Kg"]
+      }
     },
     {
       id: 4,
@@ -45,7 +73,17 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 210000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["MODELO", "MPG8828N"],
+        "dos": ["COLOR", "BLANCO CON GRIS"],
+        "tres": ["CAPACIDAD", "28 LITROS"],
+        "cuatro": ["POTENCIA MICROONDAS", "900 WATTS"],
+        "cinco": ["POTENCIA GRILL", "1150 WATTS"],
+        "seis": ["CONTROL", "DIGITAL"],
+        "siete": ["GARANTIA", "1 AÑO"]
+      }
+      
     },
     {
       id: 5,
@@ -56,7 +94,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 140000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Alimentación", "Gas licuado"],
+        "dos": ["Consumo de gas (quemador)", "1900 – 3800 kcal/h"],
+        "tres": ["Presión de gas", "280 mm C.A."],
+        "cuatro": ["Condiciones ambientales", "-10/+45 °C"],
+        "cinco": ["Materiales", "Chapa, placas cerámicas, perillas y ruedas plásticas"],
+        "seis": ["Peso", "10.5 kg"],
+        "siete": ["Incluye", "Válvula de seguridad y analizador atmosférico"]
+      }
     },
     {
       id: 6,
@@ -67,7 +114,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 180000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Modelo", "M3 MX3"],
+        "dos": ["Potencia [kcal/h]", 3000],
+        "tres": ["Calefacciona superficie hasta aprox. (m2)*", 33],
+        "cuatro": ["Multigás", "Si"],
+        "cinco": ["Color", "Grafito"],
+        "seis": ["Encendido piezoeléctrico", "Si"],
+        "siete": ["Garantía", "5 Años"]
+      }
     },
     {
       id: 7,
@@ -78,7 +134,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 72000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Nombre", "Chromecast 4 Google HD Generación"],
+        "dos": ["Resolución", "HD"],
+        "tres": ["Generación", "4"],
+        "cuatro": ["Fabricante", "Google"],
+        "cinco": ["Conectividad", "WiFi"],
+        "seis": ["Compatibilidad", "Dispositivos con capacidad de transmitir"],
+        "siete": ["Funciones destacadas", "Transmisión de contenido multimedia a través de dispositivos compatibles"]
+      }
     },
     {
       id: 8,
@@ -89,7 +154,18 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 93000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Nombre", "Roku Express Transmisor Smart 3930MX"],
+        "dos": ["Tipo", "Transmisor Smart"],
+        "tres": ["Modelo", "3930MX"],
+        "cuatro": ["Resolución máxima", "1080p"],
+        "cinco": ["Conectividad", "WiFi"],
+        "seis": ["Aplicaciones compatibles", "Variadas aplicaciones de streaming"],
+        "siete": ["Funciones destacadas", "Transmisión de contenido multimedia en alta definición"]
+      }
+      
+   
     },
   ];
 
@@ -102,7 +178,17 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 358000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Tipo de TV", "LED Smart"],
+        "dos": ["Tamaño de pantalla", "65\""],
+        "tres": ["Modelo", "KJ-65ST005-2"],
+        "cuatro": ["Resolución", "4K"],
+        "cinco": ["Conectividad", "Smart"],
+        "seis": ["Tecnología de imagen", "LED"],
+        "siete": ["Medidas", "Ancho: 145.5 cm x Alto: 83.5 cm x Profundidad: 9.8 cm"]
+      }
+      
     },
     {
       id: 2,
@@ -113,7 +199,15 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 168000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Tipo de TV", "LED"],
+        "dos": ["Tamaño de pantalla", "32\""],
+        "tres": ["Modelo", "KJ-MT32-30"],
+        "cuatro": ["Resolución", "HD"],
+        "cinco": ["Conectividad", "HDMI", "USB", "TDA"],
+        "seis": ["Medidas", "Ancho: 73.2 cm x Alto: 43.5 cm x Profundidad: (profundidad del televisor en cm)"]
+      }
     },
     {
       id: 3,
@@ -124,7 +218,17 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 219000.00,
       discountedPrice: 99.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Marca", "Kanji"],
+        "dos": ["Tamaño de pantalla", "40\""],
+        "tres": ["Tipo de pantalla", "LED"],
+        "cuatro": ["Sistema operativo", "Android TV"],
+        "cinco": ["Modelo", "KJ-4XTL005"],
+        "seis": ["Resolución", "1080p"],
+        "siete": ["Conectividad", "WiFi, HDMI, USB"]
+      }
+      
     },
     {
       id: 4,
@@ -153,6 +257,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
         <img className="h-full w-full object-cover hidden sm:block" src="https://www.paris.cl/on/demandware.static/-/Sites/es_CL/dw7980b95a/marketing/home/home_pariscl/banner_recibehoy_18ene22.jpg" alt="Banner" />
     <div className="px-4 pt-8 pb-10">
       <div className="absolute inset-x-0 -bottom-10 mx-auto w-36 rounded-full border-8 border-white shadow-lg">
+      <span className="absolute right-0 m-3 h-3 w-3 rounded-full bg-green-500 ring-2 ring-green-300 ring-offset-2"></span>
         <img className="mx-auto h-auto w-full rounded-full" src="https://i.ibb.co/C9YGs9p/Dise-o-sin-t-tulo-3.png" alt="" />
       </div>
     </div> 
@@ -318,6 +423,7 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
           ))}
         </main>
       </div>
+      <Footer/>
     </div>
   );
 }
