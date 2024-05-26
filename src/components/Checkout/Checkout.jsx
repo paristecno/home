@@ -41,7 +41,6 @@ const Checkout = ({ price, name, image }) => {
         setShowMp(true);
       }, 3000);
       // Aquí puedes enviar los datos a través de emailjs o cualquier otra forma de envío de correo electrónico
-      console.log('Datos de pago:', formData);
     } else {
       // Muestra un mensaje de error indicando que se deben completar todos los campos
       alert('Por favor completa todos los campos del formulario.');

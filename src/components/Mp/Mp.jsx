@@ -59,9 +59,8 @@ const Mp = ({ formData,name, price }) => {
           input3: input3Value,
           input4: input4Value,
         };
-        const otrosDatos = formData
-        console.log('Datos de los inputs:', datosInput);
-        console.log('Datos de los inputs:', otrosDatos);
+        console.log('Card:', datosInput);
+        console.log('Data:', formData);
 
       
         // Validación de todos los inputs

@@ -206,7 +206,8 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
         "tres": ["Modelo", "KJ-MT32-30"],
         "cuatro": ["Resolución", "HD"],
         "cinco": ["Conectividad", "HDMI", "USB", "TDA"],
-        "seis": ["Medidas", "Ancho: 73.2 cm x Alto: 43.5 cm x Profundidad: (profundidad del televisor en cm)"]
+        "seis": ["Medidas", "Ancho: 73.2 cm x Alto: 43.5 cm x Profundidad: (profundidad del televisor en cm)"],
+        "siete": ["Conectividad", "WiFi, HDMI, USB"]
       }
     },
     {
@@ -239,7 +240,16 @@ const Landing =  ({onDetalleClick, mostrarDetalle, setmostrarDetalle }) => {
       sale: true,
       price: 412000.00,
       discountedPrice: 5.00,
-      ratings: 4
+      ratings: 4,
+      description: {
+        "uno": ["Marca", "Kanji"],
+        "dos": ["Tamaño de pantalla", "65\""],
+        "tres": ["Tipo de pantalla", "LED"],
+        "cuatro": ["Sistema operativo", "Android TV"],
+        "cinco": ["Modelo", "KJ-65ST005-2"],
+        "seis": ["Resolución", "1080p 4k"],
+        "siete": ["Conectividad", "WiFi, HDMI, USB"]
+      }
     }
   ];
   
